@@ -1,0 +1,12 @@
+Given (fixture):
+================
+  Hello
+
+Execute (modification):
+------------------
+* call function
+  :call ExecuteFoo()
+
+Expect (result):
+~~~~~~~~~~~~~~~~
+  Foo

@@ -1,0 +1,17 @@
+*jessdoc.txt*  JSDoc shortcuts
+
+Author:  Jonathan Brink
+License: Same terms as Vim itself (see |license|)
+
+INTRODUCTION                                    *jessdoc*
+
+Plugin for JSDoc shortcuts
+
+
+ABOUT                                           *jessdoc-about*
+
+Grab the latest version or report a bug on GitHub:
+
+https://github.com/jonbri/vim-jessdoc
+
+ vim:tw=78:et:ft=help:norl:

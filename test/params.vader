@@ -1,0 +1,87 @@
+Given(GetParams with no params);
+function foo() {
+}
+Execute:
+  :/function
+  AssertEqual 0, len(GetParams())
+
+
+Given(GetParams with one param);
+function foo(foo) {
+}
+Execute:
+  :/function
+  AssertEqual 'foo', GetParams()[0]
+
+
+Given(GetParams with two params);
+function foo(foo,bar) {
+}
+Execute:
+  :/function
+  AssertEqual 'foo', GetParams()[0]
+  AssertEqual 'bar', GetParams()[1]
+
+
+Given(GetParams with two params and weird spacing);
+function foo(  foo  , bar   ) {
+}
+Execute:
+  :/function
+  AssertEqual 'foo', GetParams()[0]
+  AssertEqual 'bar', GetParams()[1]
+
+
+Given(one param):
+  function foo(foo) {
+  }
+Execute:
+  :/function
+  JessDoc
+Expect:
+  /**
+   *
+   * param {TODO} foo TODO
+   */
+  function foo(foo) {
+  }
+
+
+Given(two params):
+  function foo(foo, bar) {
+  }
+Execute:
+  :/function
+  JessDoc
+Expect:
+  /**
+   *
+   * param {TODO} foo TODO
+   * param {TODO} bar TODO
+   */
+  function foo(foo, bar) {
+  }
+
+
+Given(HasParamTag, expect true):
+  /**
+   *
+   * param {int} foo TODO
+   */
+  function foo(foo) {
+  }
+Execute:
+  :/function
+  AssertEqual 1, HasParamTag('foo', 0, 4)
+
+
+Given(HasParamTag, expect false):
+  /**
+   *
+   * param {string} bar TODO
+   */
+  function foo(bar) {
+  }
+Execute:
+  :/function
+  AssertEqual 0, HasParamTag('foo', 0, 4)

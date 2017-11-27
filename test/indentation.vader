@@ -1,0 +1,68 @@
+Given(no indentation);
+function foo() {
+}
+Execute:
+  :/function
+  JessDoc
+Expect;
+/**
+ *
+ */
+function foo() {
+}
+
+
+Given(3 spaces indentation);
+   // test
+   function foo() {
+   }
+Execute:
+  :/function
+  AssertEqual '   ', GetLeadingIndentation(2)
+
+
+Given(1 tab character indentation);
+	// test
+	function foo() {
+	}
+Execute:
+  :/function
+  AssertEqual '	', GetLeadingIndentation(2)
+
+
+Given(with 2 tabs);
+		// test
+		function foo() {
+		}
+Execute:
+  :/function
+  AssertEqual '		', GetLeadingIndentation(2)
+
+
+Given(with 2 spaces);
+  function foo() {
+  }
+Execute:
+  :/function
+  JessDoc
+Expect;
+  /**
+   *
+   */
+  function foo() {
+  }
+
+
+Given(with 3 tabs);
+			function foo(foo) {
+			}
+Execute:
+  :/function
+  JessDoc
+Expect;
+			/**
+			 *
+			 * param {TODO} foo TODO
+			 */
+			function foo(foo) {
+			}

@@ -1,0 +1,23 @@
+Given(Get start and end of JSDoc block);
+/**
+ *
+ */
+function foo() {
+}
+Execute:
+  :/function
+  AssertEqual 1, GetStartJSDocBlockLineNumber()
+  AssertEqual 3, GetEndJSDocBlockLineNumber()
+
+
+Given(Get start and end of JSDoc block, with leading comments);
+// one
+// two
+/**
+ *
+ */
+function foo() {
+}
+Execute:
+  :/function
+  AssertEqual 3, GetStartJSDocBlockLineNumber()

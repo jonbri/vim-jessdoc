@@ -62,7 +62,7 @@ Execute:
 Expect;
 			/**
 			 *
-			 * param {TODO} foo TODO
+			 * @param {TODO} foo TODO
 			 */
 			function foo(foo) {
 			}

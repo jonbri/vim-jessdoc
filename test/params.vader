@@ -41,7 +41,7 @@ Execute:
 Expect:
   /**
    *
-   * param {TODO} foo TODO
+   * @param {TODO} foo TODO
    */
   function foo(foo) {
   }
@@ -56,8 +56,8 @@ Execute:
 Expect:
   /**
    *
-   * param {TODO} foo TODO
-   * param {TODO} bar TODO
+   * @param {TODO} foo TODO
+   * @param {TODO} bar TODO
    */
   function foo(foo, bar) {
   }
@@ -66,7 +66,7 @@ Expect:
 Given(HasParamTag, expect true):
   /**
    *
-   * param {int} foo TODO
+   * @param {int} foo TODO
    */
   function foo(foo) {
   }
@@ -78,7 +78,7 @@ Execute:
 Given(HasParamTag, expect false):
   /**
    *
-   * param {string} bar TODO
+   * @param {string} bar TODO
    */
   function foo(bar) {
   }

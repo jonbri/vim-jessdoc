@@ -1,6 +1,6 @@
 Given(HasReturnTag, expect true):
   /**
-   * return {string} here is the description
+   * @returns {string} here is the description
    */
   function foo() {
   }
@@ -30,7 +30,7 @@ Execute:
   :call AddReturn(3, 1, 2)
 Expect:
   /**
-   * return {TODO} TODO
+   * @returns {TODO} TODO
    */
   function foo() {
   }

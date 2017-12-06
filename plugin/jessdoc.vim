@@ -37,7 +37,7 @@ endfunction
 
 function! AddParam(name, line, JSDocBlockStart, JSDocBlockEnd)
   let l:leadingIndentationCharacters = GetLeadingIndentation(a:line)
-  call append(a:JSDocBlockEnd - 1, l:leadingIndentationCharacters.' * param {TODO} '.a:name.' TODO')
+  call append(a:JSDocBlockEnd - 1, l:leadingIndentationCharacters.' * @param {TODO} '.a:name.' TODO')
 endfunction
 
 " TODO:
@@ -45,7 +45,7 @@ endfunction
 " Turn this into a top-level function that can be invoked directly
 function! AddReturn(line, JSDocBlockStart, JSDocBlockEnd)
   let l:leadingIndentationCharacters = GetLeadingIndentation(a:line)
-  call append(a:JSDocBlockEnd - 1, l:leadingIndentationCharacters.' * return {TODO} TODO')
+  call append(a:JSDocBlockEnd - 1, l:leadingIndentationCharacters.' * @returns {TODO} TODO')
 endfunction
 
 function! GetStartJSDocBlockLineNumber()
